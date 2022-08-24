@@ -8,9 +8,9 @@ def Validacao(quantidadeNumero):
   elif numeroCartaoLista[0] == 4:
       if quantidadeNumero == 16:
         cartao = "Visa"
+  else:
+    print("Cartão Inválido")
   print(cartao)
-
-
 
 def AlgoritmoLuhn(quantidadeNumero):
   soma = 0
@@ -28,13 +28,13 @@ def AlgoritmoLuhn(quantidadeNumero):
   else:
     print("Cartão Inválido!")
 
+if __name__ == "__main__":
+  numeroCartao = input("Digite o número do cartão: ")
+  numeroCartaoLista = []
 
-numeroCartao = input("Digite o número do cartão: ")
-numeroCartaoLista = []
+  #salvando o número em uma lista
+  for i in numeroCartao:
+    numeroCartaoLista.append(int(i))
 
-#salvando o número em uma lista
-for i in numeroCartao:
-  numeroCartaoLista.append(int(i))
-
-quantidadeNumero = len(numeroCartaoLista)
-AlgoritmoLuhn(quantidadeNumero)
+  quantidadeNumero = len(numeroCartaoLista)
+  AlgoritmoLuhn(quantidadeNumero)
